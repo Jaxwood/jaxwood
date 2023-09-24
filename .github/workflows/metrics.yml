@@ -10,10 +10,14 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Bio
+        uses: lowlighter/metrics@latest
         with:
+          template: terminal
+          filename: github-metrics.svg
           token: ${{ secrets.METRICS }}
-      - name: Most used (with details)
+          base: header, metadata
+      - name: Most used languages
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.plugin.languages.details.svg
